@@ -27,7 +27,7 @@ header {
 
 /* Logo image */
 .logo img {
-    width: 20vw;        /* responsive */
+    width: 20vw;
     max-width: 220px;
     height: auto;
 }
@@ -45,20 +45,39 @@ nav a {
     font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
-
-    color: #044b3b;   /* dark green */
+    color: #044b3b;
     letter-spacing: 0.5px;
 }
 
-/* Hover uses lighter green */
 nav a:hover {
     color: #8dbb4e;
 }
 
-/* Hero Section */
+/* Active nav link */
+nav a.active {
+    color: #8dbb4e;
+}
+
+/* Global Section Headers */
+section h2 {
+    font-family: "Lobster Two", cursive;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #8dbb4e;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+/* ---------------------- */
+/* HERO SECTION (Home)    */
+/* ---------------------- */
+
+/* Left-aligned hero (original look restored) */
 .hero {
     padding: 2.5rem 0;
     max-width: 800px;
+    text-align: left;     /* ensure left alignment */
+    margin: 0;            /* no auto-centering */
 }
 
 /* Floating image */
@@ -67,7 +86,6 @@ nav a:hover {
     max-width: 40%;
     width: 100%;
     max-height: 400px;
-
     margin: 0 0 1rem 1rem;
     border-radius: 6px;
 }
@@ -79,20 +97,14 @@ nav a:hover {
     clear: both;
 }
 
-/* Headers */
-section h2 {
-    font-family: "Lobster Two", cursive;
-    font-size: 1.75rem;
-    font-weight: 700;
+/* ---------------------- */
+/* EVENTS SECTION (Home)  */
+/* ---------------------- */
 
-    color: #8dbb4e; /* light green */
-    margin-bottom: 0.5rem;
-}
-
-/* Events and Workshops */
 .events-section {
     padding: 2rem 0;
     border-top: 1px solid #0f2f24;
+    text-align: center;
 }
 
 .events-image img {
@@ -100,7 +112,7 @@ section h2 {
     max-width: 900px;
     height: auto;
     display: block;
-    margin: 1rem 0;
+    margin: 1rem auto;
     border-radius: 6px;
 }
 
@@ -108,30 +120,28 @@ section h2 {
     list-style: none;
     padding: 0;
     margin: 1rem 0 0;
+    text-align: center;
 }
 
 .events-list li {
     margin-bottom: 0.5rem;
 }
 
-/* Event links */
 .events-list a {
     font-weight: 700;
     text-decoration: none;
     letter-spacing: 0.3px;
-
-    color: #f3f8f1; /* soft off-white */
-}
-
-.events-list a:hover {
-    color: #8dbb4e; /* logo green hover */
-}
-
-.events-list a:visited {
     color: #f3f8f1;
 }
 
-/* Seasonal Offerings */
+.events-list a:hover {
+    color: #8dbb4e;
+}
+
+/* ---------------------- */
+/* SEASONAL OFFERINGS     */
+/* ---------------------- */
+
 .seasonal-offerings {
     padding: 2rem 0 3rem;
     border-top: 1px solid #0f2f24;
@@ -139,30 +149,27 @@ section h2 {
 
 .seasonal-row {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
     margin-top: 1rem;
+    justify-content: center; /* CENTERED */
 }
 
-/* Seasonal items */
 .seasonal-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 180px;
 
+    max-width: 220px;
     text-decoration: none;
     font-weight: 700;
-    color: #f3f8f1;     /* off-white */
-    letter-spacing: 0.3px;
-}
-
-.seasonal-item:hover {
-    color: #8dbb4e;     /* lighten hover */
-}
-
-.seasonal-item:visited {
     color: #f3f8f1;
+    letter-spacing: 0.3px;
+
+    transition: transform 0.25s ease, 
+                box-shadow 0.25s ease,
+                color 0.25s ease;
+    transform-origin: center;
 }
 
 .seasonal-item img {
@@ -177,13 +184,27 @@ section h2 {
     text-align: center;
 }
 
-/* Footer + Socials + Link */
+.seasonal-item:hover,
+.seasonal-item:focus-visible {
+    transform: scale(1.06);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    color: #8dbb4e;
+}
+
+/* Prevent purple links */
+a:visited {
+    color: inherit;
+}
+
+/* ---------------------- */
+/* FOOTER                 */
+/* ---------------------- */
+
 footer {
     padding: 1.5rem 10%;
     border-top: 1px solid #0f2f24;
     text-align: center;
-
-    background-color: #04110d; /* slightly darker footer */
+    background-color: #04110d;
 }
 
 .social-links {
@@ -204,15 +225,313 @@ footer {
 .external-resource a {
     font-weight: 600;
     text-decoration: none;
-
-    color: #8dbb4e; /* bright green */
+    color: #8dbb4e;
 }
 
 .external-resource a:hover {
     text-decoration: underline;
 }
 
-/* Prevent purple links */
-a:visited {
-    color: inherit;
+/* ---------------------- */
+/* SHOP / PRODUCTS PAGE   */
+/* ---------------------- */
+
+.products-section {
+    padding: 2rem 0 3rem;
+    border-top: 1px solid #0f2f24;
+    text-align: center;
+}
+
+.section-intro {
+    max-width: 640px;
+    margin: 0.5rem auto 1.5rem;
+    text-align: center;
+    font-weight: 300;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 200px;
+
+    text-decoration: none;
+    color: #f3f8f1;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-align: center;
+
+    transition: transform 0.25s ease, 
+                box-shadow 0.25s ease,
+                color 0.25s ease;
+    transform-origin: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.product-card h3 {
+    font-size: 1rem;
+    margin: 0.25rem 0;
+}
+
+.product-card .price {
+    margin: 0.15rem 0 0;
+    font-weight: 700;
+    color: #8dbb4e;
+}
+
+.product-card:hover,
+.product-card:focus-visible {
+    transform: scale(1.06);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    color: #8dbb4e;
+}
+
+/* ---------------------- */
+/* EVENTS PAGE            */
+/* ---------------------- */
+
+.events-page {
+    padding: 2rem 0 3rem;
+    border-top: 1px solid #0f2f24;
+    text-align: center;
+}
+
+.events-intro {
+    max-width: 640px;
+    margin: 0.5rem auto 2rem;
+    font-weight: 300;
+}
+
+.events-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.event-card {
+    max-width: 360px;
+    text-align: left;
+}
+
+.event-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.event-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.event-card p {
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.event-details {
+    font-weight: 600;
+    color: #8dbb4e;
+}
+
+.events-cta {
+    margin-top: 2.5rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: 999px;
+    background-color: #8dbb4e;
+    color: #04110d;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    background-color: #a7cf67;
+    transform: scale(1.03);
+}
+
+/* ---------------------- */
+/* ABOUT PAGE              */
+/* ---------------------- */
+
+.about-hero img {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    display: block;
+    margin: 2rem auto 1.5rem;
+    border-radius: 6px;
+}
+
+.about-text {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;   /* FIXED: center the About text */
+}
+
+.about-text p {
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+/* ---------------------- */
+/* FORM / REGISTER PAGE   */
+/* ---------------------- */
+
+.form-page {
+    padding: 2rem 0 3rem;
+    border-top: 1px solid #0f2f24;
+    text-align: center;
+}
+
+.form-intro {
+    max-width: 640px;
+    margin: 0.5rem auto 1.5rem;
+    font-weight: 300;
+}
+
+.back-home-link {
+    margin-bottom: 1rem;
+}
+
+.back-home-link a {
+    color: #8dbb4e;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-home-link a:hover {
+    text-decoration: underline;
+}
+
+/* Form container */
+.event-form {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 1.75rem 1.5rem 2rem;
+    background-color: #08221a; /* slightly lighter than body for contrast */
+    border-radius: 8px;
+    box-sizing: border-box;
+    text-align: left;          /* labels + fields left-aligned inside card */
+}
+
+/* Generic form row */
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.form-row label {
+    font-weight: 600;
+}
+
+/* Text inputs, select, textarea share similar styling */
+.event-form input[type="text"],
+.event-form input[type="email"],
+.event-form input[type="tel"],
+.event-form select,
+.event-form textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid #23543f;
+    background-color: #04110d;
+    color: #f3f8f1;
+    box-sizing: border-box;
+}
+
+.event-form input[type="text"]:focus,
+.event-form input[type="email"]:focus,
+.event-form input[type="tel"]:focus,
+.event-form select:focus,
+.event-form textarea:focus {
+    outline: none;
+    border-color: #8dbb4e;
+    box-shadow: 0 0 0 2px rgba(141, 187, 78, 0.25);
+}
+
+/* Fieldsets for checkboxes / radios */
+.form-options {
+    border: 1px solid #23543f;
+    border-radius: 6px;
+    padding: 0.75rem 0.75rem 0.5rem;
+}
+
+.form-options legend {
+    font-weight: 700;
+    padding: 0 0.3rem;
+    color: #8dbb4e;
+}
+
+.form-options label {
+    display: block;
+    font-weight: 400;
+    margin-bottom: 0.35rem;
+}
+
+/* Keep checkboxes & radios visible */
+.form-options input[type="checkbox"],
+.form-options input[type="radio"] {
+    margin-right: 0.4rem;
+}
+
+/* Textarea */
+.event-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Submit Button */
+.form-actions {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.btn-submit {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: 999px;
+    background-color: #8dbb4e;
+    color: #04110d;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover,
+.btn-submit:focus-visible {
+    background-color: #a7cf67;
+    transform: scale(1.03);
+    outline: none;
 }
