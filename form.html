@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprout &amp; Grow – Event Registration</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="logo">
+            <img src="images/SGLogo.png" alt="Sprout &amp; Grow Nursery logo">
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="events.html">Events &amp; Workshops</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="form-page">
+            <h2>Event Registration</h2>
+            <p class="form-intro">
+                Sign up for one of our upcoming events or workshops. We’ll follow up with a confirmation
+                and any additional details you need to know before you arrive.
+            </p>
+
+            <!-- Extra explicit link back to Home to satisfy requirement -->
+            <p class="back-home-link">
+                <a href="index.html">← Back to Home</a>
+            </p>
+
+            <form class="event-form" action="#" method="post" novalidate>
+                <!-- At least 3 text boxes -->
+                <div class="form-row">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="full-name" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <!-- Drop-down selection list -->
+                <div class="form-row">
+                    <label for="event-select">Which event are you registering for?</label>
+                    <select id="event-select" name="event-select" required>
+                        <option value="">Please choose an event</option>
+                        <option value="organic-basics">Organic Gardening Basics – Weekend Class</option>
+                        <option value="kids-garden-day">Kids’ Garden Day – Family Workshop</option>
+                        <option value="compost-101">Compost 101: Turning Waste into Soil Gold</option>
+                    </select>
+                </div>
+
+                <!-- No fewer than 3 checkboxes -->
+                <fieldset class="form-row form-options">
+                    <legend>What are you most interested in learning?</legend>
+                    <label>
+                        <input type="checkbox" name="interests" value="soil-health">
+                        Soil health &amp; compost
+                    </label>
+                    <label>
+                        <input type="checkbox" name="interests" value="vegetable-gardens">
+                        Starting a vegetable garden
+                    </label>
+                    <label>
+                        <input type="checkbox" name="interests" value="container-plants">
+                        Container &amp; balcony plants
+                    </label>
+                    <label>
+                        <input type="checkbox" name="interests" value="kids-activities">
+                        Activities for kids &amp; families
+                    </label>
+                </fieldset>
+
+                <!-- Two radio buttons, work in tandem -->
+                <fieldset class="form-row form-options">
+                    <legend>Preferred contact method</legend>
+                    <label>
+                        <input type="radio" name="contact-method" value="email" checked>
+                        Email
+                    </label>
+                    <label>
+                        <input type="radio" name="contact-method" value="phone">
+                        Phone
+                    </label>
+                </fieldset>
+
+                <!-- One textarea -->
+                <div class="form-row">
+                    <label for="notes">Questions, accessibility needs, or special requests?</label>
+                    <textarea id="notes" name="notes" rows="4" placeholder="Tell us anything we should know ahead of time."></textarea>
+                </div>
+
+                <!-- Submit button -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">Submit Registration</button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sprout &amp; Grow Nursery | Organic. Local. Community-Driven.</p>
+
+        <div class="social-links">
+            <a href="https://www.facebook.com/login" target="_blank" rel="noopener">
+                <img src="images/FBLogo.png" 
+                     alt="Facebook logo"
+                     style="max-width:100px; max-height:100px; width:100%; height:auto;">
+            </a>
+            <a href="https://x.com/login" target="_blank" rel="noopener">
+                <img src="images/XLogo.png" 
+                     alt="X (formerly Twitter) logo"
+                     style="max-width:100px; max-height:100px; width:100%; height:auto;">
+            </a>
+        </div>
+
+        <p class="external-resource">
+            Learn more about organic gardening at
+            <a href="https://www.organicgardening.com" target="_blank" rel="noopener">
+                Organic Gardening
+            </a>.
+        </p>
+    </footer>
+
+</body>
+</html>
